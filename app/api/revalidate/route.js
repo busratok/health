@@ -5,7 +5,9 @@ export async function POST(req) {
   const tag = req.body?.model;
   if (req) {
     // revalidateTag(tag);
-    console.log(req.url.searchParams.get("secret"));
+    const url = new URL(req.url, `http://${req.headers.host}`);
+    const path = url.searchParams.get("secret");
+    console.log("Path parameter:", path);
     return Response.json({
       revalidated: true,
       now: Date.now(),

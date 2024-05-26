@@ -1,6 +1,6 @@
 import { revalidateTag } from "next/cache";
 
-export async function GET(req) {
+export async function POST(req) {
   console.log(req);
   const tag = req.body?.model;
   if (req.query?.secret !== process.env.SECRET) {

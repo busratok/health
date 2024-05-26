@@ -5,7 +5,7 @@ export async function POST(req) {
   const tag = req.body?.model;
   if (req) {
     // revalidateTag(tag);
-    console.log(req.url.searchParams);
+    console.log(req.url.searchParams.get("secret"));
     return Response.json({
       revalidated: true,
       now: Date.now(),

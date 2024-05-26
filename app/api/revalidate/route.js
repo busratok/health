@@ -9,7 +9,7 @@ export async function POST(req) {
     return Response.json({
       revalidated: false,
       now: Date.now(),
-      message: "Invalid Token",
+      message: "Invalid Tokenn",
     });
   }
   if (tag) {

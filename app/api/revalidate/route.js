@@ -3,7 +3,7 @@ import { revalidateTag } from "next/cache";
 export async function POST(req) {
   console.log(req);
   const tag = req.body?.model;
-  if (tag) {
+  if (req) {
     // revalidateTag(tag);
     return Response.json({
       revalidated: true,

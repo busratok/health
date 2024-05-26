@@ -26,6 +26,7 @@ const Categories = async () => {
             </label>
           </Link>
         ))}
+        <h2>Hello</h2>
       </div>
     </div>
   );

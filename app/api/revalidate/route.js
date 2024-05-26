@@ -4,7 +4,7 @@ export async function POST(req) {
   console.log(req);
   const tag = req.body?.model;
   if (req.query?.secret === process.env.SECRET) {
-    revalidateTag(tag);
+    // revalidateTag(tag);
     return Response.json({
       revalidated: true,
       now: Date.now(),

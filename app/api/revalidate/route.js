@@ -5,6 +5,7 @@ export async function POST(req) {
   const tag = req.body?.model;
   if (req) {
     // revalidateTag(tag);
+    console.log(req.query);
     return Response.json({
       revalidated: true,
       now: Date.now(),

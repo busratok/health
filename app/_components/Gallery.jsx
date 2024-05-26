@@ -36,7 +36,7 @@ const Gallery = async () => {
           }}
         >
           <CarouselContent className=" mx-auto">
-            {data.map((item, index) => {
+            {data?.map((item, index) => {
               return (
                 <CarouselItem
                   key={index}
@@ -45,17 +45,17 @@ const Gallery = async () => {
                   <div className="p-1">
                     <Card>
                       <CardContent className=" h-64 md:h-96 rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
-                        {item.attributes?.image && (
+                        {item?.attributes?.image && (
                           <Image
                             className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
-                            key={item.id}
-                            src={item.attributes?.image?.data.attributes?.url}
-                            alt={item.attributes?.name}
+                            key={item?.id}
+                            src={item?.attributes?.image?.data.attributes?.url}
+                            alt={item?.attributes?.name}
                             width={500}
                             height={500}
                           />
                         )}
-                        {item.attributes?.video && (
+                        {item?.attributes?.video && (
                           <video
                             className="rounded-t-lg mx-auto"
                             key={item.id}
@@ -64,7 +64,9 @@ const Gallery = async () => {
                             height={900}
                           >
                             <source
-                              src={item.attributes?.image?.data.attributes?.url}
+                              src={
+                                item?.attributes?.image?.data.attributes?.url
+                              }
                               type="video/mp4"
                             />
                           </video>

@@ -12,15 +12,15 @@ const Testimonials = async () => {
         </h2>
 
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-          {data.map((item) => (
+          {data?.map((item) => (
             <blockquote
-              key={item.id}
+              key={item?.id}
               className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8"
             >
               <div className="flex items-center gap-4">
                 <Image
                   alt=""
-                  src={item.attributes.image.data.attributes.url}
+                  src={item?.attributes.image.data.attributes.url}
                   width={100}
                   height={100}
                   className="size-14 rounded-full object-cover object-top"
@@ -42,13 +42,13 @@ const Testimonials = async () => {
                   </div>
 
                   <p className="mt-0.5 text-lg font-medium text-gray-900">
-                    {item.attributes.clientName}
+                    {item?.attributes.clientName}
                   </p>
                 </div>
               </div>
 
               <p className="mt-4 text-gray-700 text-justify">
-                {item.attributes.content}
+                {item?.attributes.content}
               </p>
             </blockquote>
           ))}

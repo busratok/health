@@ -47,7 +47,9 @@ const getServices = async () => {
 };
 
 const getGallery = async () => {
-  const data = await fetchData("/galleries?populate=*");
+  const data = await fetchData("/galleries?populate=*", {
+    next: { tags: ["gallery"] },
+  });
   return data.data;
 };
 

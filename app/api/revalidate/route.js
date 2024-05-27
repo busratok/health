@@ -2,7 +2,7 @@ import { revalidateTag } from "next/cache";
 
 export async function POST(req) {
   const text = await req.text();
-  console.log(text);
+  const tag = text.model;
   const url = new URL(req.url, `http://${req.headers.host}`);
   const secret = url.searchParams.get("secret");
 

@@ -12,11 +12,16 @@ export async function POST(req) {
       message: "Invalid Token",
     });
   }
-  // if (tag) {
-  // revalidateTag(tag);
+  if (tag) {
+    revalidateTag(tag);
+    return Response.json({
+      revalidated: true,
+      now: Date.now(),
+    });
+  }
   return Response.json({
-    revalidated: true,
+    revalidated: false,
     now: Date.now(),
+    message: "Tag couldn't find",
   });
-  // }
 }

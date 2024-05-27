@@ -19,9 +19,14 @@ export async function POST(req) {
       now: Date.now(),
     });
   }
-  return Response.json({
-    revalidated: false,
-    now: Date.now(),
-    message: "Tag couldn't find",
-  });
+  return Response.json(
+    {
+      revalidated: false,
+      now: Date.now(),
+    },
+    {
+      status: 400,
+      statusText: "Tag couldn't find",
+    }
+  );
 }

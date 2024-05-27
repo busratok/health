@@ -29,7 +29,7 @@ const fetchData = async (endpoint, options = {}) => {
 
 const getCategories = async () => {
   const data = await fetchData("/categories?populate=*", {
-    next: { tags: ["categories"] },
+    next: { tags: ["category"] },
   });
   return data.data;
 };

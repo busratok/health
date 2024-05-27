@@ -1,7 +1,7 @@
 import { revalidateTag } from "next/cache";
 
 export async function POST(req) {
-  const text = await req.text();
+  const text = await req.json();
   const tag = text.body.model;
   console.log(tag);
   const url = new URL(req.url, `http://${req.headers.host}`);
